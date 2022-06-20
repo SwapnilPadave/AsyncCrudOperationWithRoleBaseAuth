@@ -1,0 +1,90 @@
+﻿@model IEnumerable<CurdOperation.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New Product</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.ProductID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.Category.CategoryID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.CategoryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Category.CategoryID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProductID" class="btn btn-primary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProductID" class="btn btn-success">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductID" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>}
+
+    <tr>
+        <td colspan="9">
+            @{ int PrevPageNo = ViewBag.PageNo - 1;
+                            if (PrevPageNo <= 0)
+                            {
+                                PrevPageNo = 1;
+                            }
+                            int NextPageNo = ViewBag.PageNo + 1;
+                            if (NextPageNo > ViewBag.NoOfPages)
+                            {
+                                NextPageNo = ViewBag.NoOfPages;
+                            } }
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="/Product/index?PageNo=@PrevPageNo">Prev</a>
+                </li>
+                @for (int i = 0; i < ViewBag.NoOfPages; i++)
+                {
+                    if ((i + 1) == ViewBag.PageNo)
+                    {
+    <li class="page-item active">
+        <a class="page-link" href="/Product/index?PageNo=@(i+1)">@(i+1)</a>
+    </li> }
+                    else
+                    {
+    <li class="page-item">
+        <a class="page-link" href="/Product/index?PageNo=@(i+1)">@(i+1)</a>
+    </li>}
+                }
+                <li class="page-item">
+                    <a class="page-link" href="/Product/index?PageNo=@NextPageNo">Next</a>
+                </li>
+            </ul>
+        </td>
+    </tr>
+    </tbody>
+</table>

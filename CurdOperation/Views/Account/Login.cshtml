@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LayoutView1.cshtml";
+}
+
+
+<div class="container" style="background-color:burlywood">
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Login</h3>
+            <form asp-action="Login" method="post">
+                <div class="form-group">
+                    <label>UserName</label>
+                    <input type="text" class="form-control" id="UserName" name="UserName" />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" id="password" name="password" />
+                </div>
+                <div class="form-group">
+                    <label></label>
+                    <input type="submit" class="btn btn-primary" value="Login" />
+                    <input type="button" class="btn btn-danger" value="Cancle" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
