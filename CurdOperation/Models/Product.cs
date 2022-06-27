@@ -12,11 +12,10 @@ namespace CurdOperation.Models
         [Key]
         public int ProductID { get; set; }
         public string ProductName { get; set; }
+        public string CreatedDate { get; set; }
 
-        [Display(Name = "Category_model")]
+        [Display(Name = "CategoryID")]
         public virtual int CategoryID { get; set; }
-
-        [ForeignKey("CategoryID")]
         public virtual Category Category { get; set; }
     }
 }

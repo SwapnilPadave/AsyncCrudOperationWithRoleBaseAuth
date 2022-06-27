@@ -19,19 +19,30 @@ namespace WebApplication3.Controllers
         }
 
         [Authorize(Roles = "Admin,User")]
-        public async Task<ActionResult> Index(string search="",int PageNo=1)
+        public async Task<ActionResult> Index(/*string search="",int PageNo=1*/ int pg=1)
         {
-            List<Category> Categories = _context.Categories.Where(temp => temp.CategoryName.Contains(search)).ToList();
-            ViewBag.search = search;
+            Category c = _context.Categories.FirstOrDefault();
+            #region Paging
+            //ViewBag.search = search;
 
-            int NoOfRecordsPerPage = 5;
-            int NoOfPages = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(Categories.Count) / Convert.ToDouble(NoOfRecordsPerPage)));
-            int NoOfRecordsToSkip = (PageNo - 1) * NoOfRecordsPerPage;
-            ViewBag.PageNo = PageNo;
-            ViewBag.NoOfPages = NoOfPages;
-            Categories = Categories.Skip(NoOfRecordsToSkip).Take(NoOfRecordsPerPage).ToList();
+            //int NoOfRecordsPerPage = 5;
+            //int NoOfPages = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(Categories.Count) / Convert.ToDouble(NoOfRecordsPerPage)));
+            //int NoOfRecordsToSkip = (PageNo - 1) * NoOfRecordsPerPage;
+            //ViewBag.PageNo = PageNo;
+            //ViewBag.NoOfPages = NoOfPages;
+            //Categories = Categories.Skip(NoOfRecordsToSkip).Take(NoOfRecordsPerPage).ToList();
+            #endregion
+            const int pageSize = 5;
+            if (pg < 1)
+                pg = 1;
+            int recsCount = _context.Categories.Count();
+            var pager = new Pager(recsCount, pg, pageSize);
+            int recSkip = (pg - 1) * pageSize;
+            var data = _context.Categories.Skip(recSkip).Take(pager.PageSize).ToListAsync();
+            this.ViewBag.Pager = pager;
 
-            return View(await _context.Categories.ToListAsync());
+            //return View(await _context.Categories.ToListAsync());
+            return View(await data);
         }
         [HttpGet]
         [Authorize(Roles = "Admin")]

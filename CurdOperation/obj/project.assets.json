@@ -7154,11 +7154,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nimap\\source\\repos\\CurdOperation\\CurdOperation.csproj",
+      "projectUniqueName": "C:\\Users\\Nimap\\Desktop\\JWTAuthentication\\SwapnilPadave\\CurdOperation\\CurdOperation.csproj",
       "projectName": "CurdOperation",
-      "projectPath": "C:\\Users\\Nimap\\source\\repos\\CurdOperation\\CurdOperation.csproj",
+      "projectPath": "C:\\Users\\Nimap\\Desktop\\JWTAuthentication\\SwapnilPadave\\CurdOperation\\CurdOperation.csproj",
       "packagesPath": "C:\\Users\\Nimap\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nimap\\source\\repos\\CurdOperation\\obj\\",
+      "outputPath": "C:\\Users\\Nimap\\Desktop\\JWTAuthentication\\SwapnilPadave\\CurdOperation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nimap\\AppData\\Roaming\\NuGet\\NuGet.Config",
