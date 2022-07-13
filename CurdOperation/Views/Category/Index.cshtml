@@ -41,15 +41,17 @@
                     @Html.DisplayFor(modelItem => item.CategoryName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem=>item.CreatedDate)
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.CategoryID" class="btn btn-primary">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.CategoryID" class="btn btn-success">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.CategoryID" class="btn btn-danger">Delete</a>
+                    <a asp-action="Delete" asp-route-id="@item.CategoryID" class="btn btn-danger">Delete</a> 
+                    
                 </td>
             </tr>
-        }      
+        }
+        
 
     </tbody>
 </table>

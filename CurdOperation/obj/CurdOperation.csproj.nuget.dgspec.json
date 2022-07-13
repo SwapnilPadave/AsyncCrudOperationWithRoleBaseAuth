@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nimap\\Desktop\\JWTAuthentication\\SwapnilPadave\\CurdOperation\\CurdOperation.csproj": {}
+    "C:\\Users\\Nimap\\Desktop\\Details\\JWTAuthentication\\SwapnilPadave\\CurdOperation\\CurdOperation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nimap\\Desktop\\JWTAuthentication\\SwapnilPadave\\CurdOperation\\CurdOperation.csproj": {
+    "C:\\Users\\Nimap\\Desktop\\Details\\JWTAuthentication\\SwapnilPadave\\CurdOperation\\CurdOperation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nimap\\Desktop\\JWTAuthentication\\SwapnilPadave\\CurdOperation\\CurdOperation.csproj",
+        "projectUniqueName": "C:\\Users\\Nimap\\Desktop\\Details\\JWTAuthentication\\SwapnilPadave\\CurdOperation\\CurdOperation.csproj",
         "projectName": "CurdOperation",
-        "projectPath": "C:\\Users\\Nimap\\Desktop\\JWTAuthentication\\SwapnilPadave\\CurdOperation\\CurdOperation.csproj",
+        "projectPath": "C:\\Users\\Nimap\\Desktop\\Details\\JWTAuthentication\\SwapnilPadave\\CurdOperation\\CurdOperation.csproj",
         "packagesPath": "C:\\Users\\Nimap\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nimap\\Desktop\\JWTAuthentication\\SwapnilPadave\\CurdOperation\\obj\\",
+        "outputPath": "C:\\Users\\Nimap\\Desktop\\Details\\JWTAuthentication\\SwapnilPadave\\CurdOperation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nimap\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -57,6 +57,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.4.3, )"
             }
           },
           "imports": [

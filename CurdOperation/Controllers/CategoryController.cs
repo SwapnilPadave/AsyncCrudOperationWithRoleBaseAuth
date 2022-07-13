@@ -84,6 +84,7 @@ namespace WebApplication3.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 _context.Entry(c).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
